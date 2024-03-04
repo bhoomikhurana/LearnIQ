@@ -11,12 +11,7 @@ import {
   VStack,
   useDisclosure,
 } from '@chakra-ui/react';
-import {
-  RiDashboard2Fill,
-  RiLogoutBoxFill,
-  RiLogoutBoxLine,
-  RiMenu5Fill,
-} from 'react-icons/ri';
+import { RiDashboard2Fill, RiLogoutBoxLine, RiMenu5Fill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 const LinkButton = ({ url = '/', title = 'Home', onClose }) => (
   <Link onClick={onClose} to={url}>
@@ -30,7 +25,9 @@ const Header = () => {
   const user = {
     role: 'admin',
   };
-  const logoutHandler = () => {};
+  const logoutHandler = () => {
+    onClose();
+  };
   return (
     <>
       <ColorModeSwitcher />
@@ -75,7 +72,7 @@ const Header = () => {
                   <>
                     <VStack>
                       <HStack>
-                        <Link to="/profile">
+                        <Link to="/profile" onClose={onClose}>
                           <Button variant={'ghost'} colorScheme="yellow">
                             Profile
                           </Button>
@@ -86,7 +83,7 @@ const Header = () => {
                         </Button>
                       </HStack>
                       {user && user.role === 'admin' && (
-                        <Link to="/admin/dashboard">
+                        <Link to="/admin/dashboard" onClose={onClose}>
                           <Button colorScheme="purple" variant={'ghost'}>
                             <RiDashboard2Fill style={{ margin: '4px' }} />
                             Dashboard
@@ -97,11 +94,11 @@ const Header = () => {
                   </>
                 ) : (
                   <>
-                    <Link to="/login">
+                    <Link to="/login" onClose={onClose}>
                       <Button colorScheme="yellow">Login</Button>
                     </Link>
                     <p>OR</p>
-                    <Link to="/register">
+                    <Link to="/register" onClose={onClose}>
                       <Button colorScheme="yellow">Sign Up</Button>
                     </Link>
                   </>
