@@ -61,7 +61,7 @@ const ContactUs = () => {
           </Button>
           <Box>
             Request for a course?
-            <Link to="/requestcourse">
+            <Link to="/request">
               <Button colorScheme="yellow" variant="link">
                 Click
               </Button>

@@ -10,6 +10,7 @@ import ForgetPassword from './components/Auth/ForgetPassword';
 import ResetPassword from './components/Auth/ResetPassword';
 import ContactUs from './components/ContactUs/ContactUs';
 import RequestCourse from './components/RequestCourse';
+import About from './components/About';
 function App() {
   return (
     <Router>
@@ -17,8 +18,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/courses" element={<Courses />}></Route>
-        <Route path="/contactus" element={<ContactUs />}></Route>
-        <Route path="/requestcourse" element={<RequestCourse />}></Route>
+        <Route path="/contact" element={<ContactUs />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/request" element={<RequestCourse />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/forgetpassword" element={<ForgetPassword />}></Route>
