@@ -3,8 +3,6 @@ import {
   Container,
   Heading,
   VStack,
-  Box,
-  FormLabel,
   Input,
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
