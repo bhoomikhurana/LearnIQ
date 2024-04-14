@@ -17,6 +17,8 @@ import PaymentSuccess from './components/Payments/PaymentSuccess';
 import NotFound from './components/Layout/NotFound/NotFound';
 import CoursePage from './components/CoursePage/CoursePage';
 import Profile from './components/Profile/Profile';
+import UpdateProfile from './components/Profile/UpdateProfile';
+import ChangePassword from './components/Profile/ChangePassword';
 function App() {
   window.addEventListener('contextmenu', e => {
     e.preventDefault();
@@ -30,6 +32,8 @@ function App() {
         <Route path="/course/:id" element={<CoursePage />}></Route>
         <Route path="/contact" element={<ContactUs />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/updateprofile" element={<UpdateProfile />}></Route>
+        <Route path="/changepassword" element={<ChangePassword />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/request" element={<RequestCourse />}></Route>
         <Route path="/login" element={<Login />}></Route>
