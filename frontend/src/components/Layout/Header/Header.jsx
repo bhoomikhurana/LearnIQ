@@ -21,7 +21,7 @@ const LinkButton = ({ url = '/', title = 'Home', onClose }) => (
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const isAuthenticated = false;
+  const isAuthenticated = true;
   const user = {
     role: 'admin',
   };
@@ -40,6 +40,7 @@ const Header = () => {
         top={'6'}
         left={'6'}
         onClick={onOpen}
+        zIndex={'overlay'}
       >
         <RiMenu5Fill />
       </Button>
