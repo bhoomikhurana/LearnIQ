@@ -14,7 +14,7 @@ const Sidebar = () => {
     <VStack
       spacing={'8'}
       p={'16'}
-      boxShadow={'-2px 0 10px rgba(107,70,193,0,5'}
+      boxShadow={'-2px 0 10px rgba(107,70,193,0.5)'}
     >
       <LinkButton
         url={'dashboard'}
