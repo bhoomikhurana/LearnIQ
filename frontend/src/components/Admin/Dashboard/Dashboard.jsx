@@ -11,6 +11,7 @@ import React from 'react';
 import Sidebar from '../Sidebar';
 import cursor from '../../../assets/images/cursor.png';
 import { RiArrowDownLine, RiArrowUpLine } from 'react-icons/ri';
+import { DoughnutChart, LineChart } from './Chart';
 const DataBox = ({ title, qty, qtypercentage, profit }) => (
   <Box
     w={['full', '20%']}
@@ -96,6 +97,7 @@ const Dashboard = () => {
             pt={['8', '0']}
             ml={['0', '16']}
           />
+          <LineChart />
         </Box>
         <Grid templateColumns={['1fr', '2fr 1fr']}>
           <Box p="4">
@@ -118,6 +120,7 @@ const Dashboard = () => {
               my="8"
               ml={['0', '16']}
             />
+            <DoughnutChart />
           </Box>
         </Grid>
       </Box>
