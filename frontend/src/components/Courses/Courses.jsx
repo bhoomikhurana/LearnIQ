@@ -113,7 +113,9 @@ const Courses = () => {
             title={'sempal'}
             description={'sem'}
             views={23}
-            imageSrc={'sem'}
+            imageSrc={
+              'https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg.webp'
+            }
             id={'sem'}
             creator={'semm'}
             lectureCount={2}
