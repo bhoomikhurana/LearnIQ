@@ -7,5 +7,7 @@ config({
   path: "./config/config.env",
 });
 import courseRoutes from "./routes/courseRoutes.js";
+import ErrorMiddleware from "./middlewares/Error.js";
 app.use("/api/v1", courseRoutes);
 export default app;
+app.use(ErrorMiddleware);
