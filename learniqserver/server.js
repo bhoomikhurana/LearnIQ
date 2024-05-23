@@ -3,8 +3,7 @@ import { connectDB } from "./config/database.js";
 import cloudinary from "cloudinary";
 import RazorPay from "razorpay";
 import nodeCron from "node-cron";
-import dotenv from "dotenv";
-dotenv.config();
+
 connectDB();
 cloudinary.v2.config({
   cloud_name: process.env.CLOUDINARY_CLIENT_NAME,
