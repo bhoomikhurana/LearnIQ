@@ -9,25 +9,29 @@ import {
 } from "../controllers/courseController.js";
 import {
   authorizeAdmin,
-  authorizeSubscribers,
   isAuthenticated,
+  authorizeSubscribers,
 } from "../middlewares/auth.js";
 import singleUpload from "../middlewares/multer.js";
+
 const router = express.Router();
-//Get all courses without lectures
+
+// Get All courses without lectures
 router.route("/courses").get(getAllCourses);
-//create new course - only admin
+
+// create new course - only admin
 router
   .route("/createcourse")
   .post(isAuthenticated, authorizeAdmin, singleUpload, createCourse);
-//add lecture,delete course,get course details
+
+// Add lecture, Delete Course, Get Course Details
 router
   .route("/course/:id")
   .get(isAuthenticated, authorizeSubscribers, getCourseLectures)
   .post(isAuthenticated, authorizeAdmin, singleUpload, addLecture)
   .delete(isAuthenticated, authorizeAdmin, deleteCourse);
 
-// delete lecture
+// Delete Lecture
 router.route("/lecture").delete(isAuthenticated, authorizeAdmin, deleteLecture);
 
 export default router;

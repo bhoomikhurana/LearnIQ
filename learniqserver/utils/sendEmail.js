@@ -1,4 +1,5 @@
 import { createTransport } from "nodemailer";
+
 export const sendEmail = async (to, subject, text) => {
   const transporter = createTransport({
     host: process.env.SMTP_HOST,
@@ -8,7 +9,8 @@ export const sendEmail = async (to, subject, text) => {
       pass: process.env.SMTP_PASS,
     },
   });
-  transporter.sendMail({
+
+  await transporter.sendMail({
     to,
     subject,
     text,

@@ -1,4 +1,4 @@
-import catchAsyncError from "../middlewares/catchAsyncError.js";
+import { catchAsyncError } from "../middlewares/catchAsyncError.js";
 import { User } from "../models/User.js";
 import ErrorHandler from "../utils/errorHandler.js";
 import { instance } from "../server.js";
@@ -11,7 +11,7 @@ export const buySubscription = catchAsyncError(async (req, res, next) => {
   if (user.role === "admin")
     return next(new ErrorHandler("Admin can't buy subscription", 400));
 
-  const plan_id = process.env.PLAN_ID || "plan_OD7PSUARA5l3F4";
+  const plan_id = process.env.PLAN_ID || "plan_JuJevKAcuZdtRO";
 
   const subscription = await instance.subscriptions.create({
     plan_id,

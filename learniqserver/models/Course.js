@@ -1,16 +1,18 @@
 import mongoose from "mongoose";
+
 const schema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
-    minLength: [4, "Title must be atleast 4 characters"],
-    maxLength: [80, "Title must not be more than 80 characters"],
+    required: [true, "Please enter course title"],
+    minLength: [4, "Title must be at least 4 characters"],
+    maxLength: [80, "Title can't exceed 80 characters"],
   },
   description: {
     type: String,
-    required: true,
-    minLength: [20, "Description must be more than 10 characters"],
+    required: [true, "Please enter course title"],
+    minLength: [20, "Title must be at least 20 characters"],
   },
+
   lectures: [
     {
       title: {
@@ -21,7 +23,7 @@ const schema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      videos: {
+      video: {
         public_id: {
           type: String,
           required: true,
@@ -33,6 +35,7 @@ const schema = new mongoose.Schema({
       },
     },
   ],
+
   poster: {
     public_id: {
       type: String,
@@ -57,7 +60,7 @@ const schema = new mongoose.Schema({
   },
   createdBy: {
     type: String,
-    required: [true, "Enter course creator name"],
+    required: [true, "Enter Course Creator Name"],
   },
   createdAt: {
     type: Date,
