@@ -21,7 +21,7 @@ const LinkButton = ({ url = '/', title = 'Home', onClose }) => (
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   const user = {
     role: 'admin',
   };
@@ -73,7 +73,7 @@ const Header = () => {
                   <>
                     <VStack>
                       <HStack>
-                        <Link to="/profile" onClose={onClose}>
+                        <Link to="/profile" onClick={onClose}>
                           <Button variant={'ghost'} colorScheme="yellow">
                             Profile
                           </Button>
@@ -84,7 +84,7 @@ const Header = () => {
                         </Button>
                       </HStack>
                       {user && user.role === 'admin' && (
-                        <Link to="/admin/dashboard" onClose={onClose}>
+                        <Link to="/admin/dashboard" onClick={onClose}>
                           <Button colorScheme="purple" variant={'ghost'}>
                             <RiDashboard2Fill style={{ margin: '4px' }} />
                             Dashboard
@@ -95,7 +95,7 @@ const Header = () => {
                   </>
                 ) : (
                   <>
-                    <Link to="/login" onClose={onClose}>
+                    <Link to="/login" onClick={onClose}>
                       <Button colorScheme="yellow">Login</Button>
                     </Link>
                     <p>OR</p>

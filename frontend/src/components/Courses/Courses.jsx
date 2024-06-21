@@ -92,17 +92,12 @@ const Courses = () => {
         />
         <HStack overflowX={'auto'} paddingY="8">
           {categories.map((item, index) => (
-            <Button
-              key={index}
-              onClick={() => {
-                setCategory(item);
-              }}
-              minW={'60'}
-            >
-              <Text children={item} />
+            <Button key={index} onClick={() => setCategory(item)} minW="60">
+              <Text>{item}</Text>
             </Button>
           ))}
         </HStack>
+
         <Stack
           direction={['column', 'row']}
           flexWrap="wrap"
@@ -110,14 +105,14 @@ const Courses = () => {
           alignItems={['center', 'flex-start']}
         >
           <Course
-            title={'sempal'}
-            description={'sem'}
+            title={'MERN Stack'}
+            description={'Learn MERN STACK by Bhoomi Khurana'}
             views={23}
             imageSrc={
               'https://foundr.com/wp-content/uploads/2023/04/How-to-create-an-online-course.jpg.webp'
             }
-            id={'sem'}
-            creator={'semm'}
+            id={'1'}
+            creator={'Bhoomi Khurana'}
             lectureCount={2}
             addToPlaylistHandler={addToPlaylistHandler}
           />
